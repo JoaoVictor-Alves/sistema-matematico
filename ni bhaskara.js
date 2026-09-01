@@ -1,27 +1,28 @@
 // ==========================================
-// MÓDULO PRINCIPAL : index.js
+// MÓDULO: Equação de Bhaskara
 // ==========================================
-// O comando 'require ' importa as lógicas que estão nos outros arquivos
-const calculadora = require ('./ calculadora ');
-const bhaskara = require ('./ bhaskara ');
-
-console.log("===================================");
-console.log("[INÍCIO] SISTEMA MATEMÁTICO INDICADO [INÍCIO]");
-console.log("===================================\n");
-
-// Testando o módulo da calculadora criado pelo colega
-console.log("--- TESTANDO A CALCULADORA ---");
-console.log(`Soma de 10 + 5 = ${calculadora.somar(10, 5)}`);
-console.log(` Subtracao de 20 - 8 = ${ calculadora .subtrair (20, 8)}`);
-console.log(` Multiplicacao de 4 * 6 = ${ calculadora . multiplicar (4, 6)}`);
-console.log(`Divisao de 15 / 3 = ${ calculadora .dividir (15, 3)}`);
-console.log(`Teste erro divisao = ${ calculadora .dividir (10, 0)}`);
-
-console.log("\n--- TESTANDO O BHASKARA ---");
-// Equação base: x2 - 5x + 6 = 0 (Onde a=1, b=-5, c=6. As raízes devem ser 3 e 2)
-const resultado = bhaskara(1, -5, 6);
-
-// Exibindo o resultado em formato de tabela no terminal (console.table é nativo do JS)
-console.table(resultado);
-
-console.log("\n[SUCESSO] Sistema executado com sucesso!\n");
+// Função principal que recebe os valores de A, B e C
+function calcularBhaskara (a, b, c) {
+// Validação básica: 'a' não pode ser zero em uma equação de 2o grau
+if (a === 0) {
+return "O valor de 'a' nao pode ser zero .";
+}
+// Calcula o Delta (Delta = b2 - 4ac)
+const delta = (b * b) - (4 * a * c);
+// Se o delta for negativo , não existem raízes reais
+if (delta < 0) {
+return "Delta negativo. A equacao nao possui raizes reais .";
+}
+// Calcula as raízes X1 e X2 usando a classe Math nativa do JS para a raiz
+quadrada
+const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+// Retorna um objeto formatado com os resultados
+return {
+delta: delta ,
+x1: x1 ,
+x2: x2
+};
+}
+// Exportamos a função para ser consumida externamente
+module.exports = calcularBhaskara ;
