@@ -14,7 +14,6 @@ if (delta < 0) {
 return "Delta negativo. A equacao nao possui raizes reais .";
 }
 // Calcula as raízes X1 e X2 usando a classe Math nativa do JS para a raiz
-quadrada
 const x1 = (-b + Math.sqrt(delta)) / (2 * a);
 const x2 = (-b - Math.sqrt(delta)) / (2 * a);
 // Retorna um objeto formatado com os resultados

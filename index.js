@@ -1,5 +1,5 @@
-const calculadora = require ('./ calculadora ');
-const bhaskara = require ('./ bhaskara ');
+const calculadora = require('./calculadora');
+const bhaskara = require('./bhaskara');
 console.log ("===================================") ;
 console.log ("[ INÍCIO] SISTEMA MATEMÁTICO INICIADO [INÍCIO ]");
 console.log ("===================================\ n");
